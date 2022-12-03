@@ -1,4 +1,4 @@
-package com.example.preproj.board;
+package com.example.preproj;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

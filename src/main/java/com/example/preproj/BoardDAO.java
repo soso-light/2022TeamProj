@@ -1,4 +1,4 @@
-package com.example.preproj.board;
+package com.example.preproj;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -12,21 +12,20 @@ import java.util.List;
 
 @Repository
 public class BoardDAO {
-    @Autowired
     private JdbcTemplate template;
 
     public void setTemplate(JdbcTemplate template) {
         this.template = template;
     }
 
-    private final String BOARD_INSERT = "insert into BOARD (Title, writer, content) values (?, ?, ?)";
-    private final String BOARD_UPDATE = "update BOARD set Title=?, writer=?, content=? where seq=?";
-    private final String BOARD_DELETE = "delete from BOARD where seq=?";
-    private final String BOARD_GET = "select * from BOARD where seq=?";
-    private final String BOARD_LIST = "selet * from BOARD order by seq desc";
+    private final String BOARD_INSERT = "insert into RECIPE_DATA (title, userid, cookingTime, cookingTools, ingredients, recipe, likes) values (?, ?, ?, ?, ?, ?, ?)";
+    private final String BOARD_UPDATE = "update RECIPE_DATA set title=?, userid=?, cookingTime=?, cookingTools=?, ingredients=?, recipe=?, likes=? where seq=?";
+    private final String BOARD_DELETE = "delete from RECIPE_DATA where seq=?";
+    private final String BOARD_GET = "select * from RECIPE_DATA where seq=?";
+    private final String BOARD_LIST = "select * from RECIPE_DATA order by seq desc";
 
     public int insertBoard(BoardVO vo){
-        return template.update(BOARD_INSERT, new Object[]{vo.getTitle(), vo.getWriter(), vo.getContent()});
+        return template.update(BOARD_INSERT, new Object[]{vo.getTitle(), vo.getUserid(), vo.getCookingTime(), vo.getCookingTools(), vo.getIngredients(), vo.getRecipe(), vo.getLikes()});
     }
 
     public int deleteBoard(int id){
@@ -34,7 +33,7 @@ public class BoardDAO {
     }
 
     public int updateBoard(BoardVO vo){
-        return template.update(BOARD_UPDATE, new Object[]{vo.getTitle(), vo.getWriter(), vo.getContent(), vo.getSeq()});
+        return template.update(BOARD_UPDATE, new Object[]{vo.getTitle(), vo.getTitle(), vo.getUserid(), vo.getCookingTime(), vo.getCookingTools(), vo.getIngredients(), vo.getRecipe(), vo.getLikes(), vo.getSeq()});
     }
 
     public BoardVO getBoard(int seq){
@@ -47,8 +46,10 @@ public class BoardDAO {
                 BoardVO data = new BoardVO();
                 data.setSeq(rs.getInt("seq"));
                 data.setTitle(rs.getString("title"));
+                data.setUserid(rs.getString("userid"));
+                data.setCookingTime(rs.getString("cookingTime"));
+                data.setLikes(rs.getInt("likes"));
                 data.setRegdate(rs.getDate("regdate"));
-                data.setWriter(rs.getString("writer"));
                 return data;
             }
         });

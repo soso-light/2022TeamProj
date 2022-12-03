@@ -1,9 +1,18 @@
-package com.example.preproj.board;
+package com.example.preproj;
 
 import java.util.Date;
 
 public class BoardVO {
     private int seq;
+    private String userid;
+    private String title;
+    private String cookingTime;
+    private String cookingTools;
+    private String ingredients;
+    private String recipe;
+    private Date regdate;
+    private int likes;
+
 
     public int getSeq() {
         return seq;
@@ -13,12 +22,12 @@ public class BoardVO {
         this.seq = seq;
     }
 
-    public String getCategory() {
-        return category;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getTitle() {
@@ -29,20 +38,36 @@ public class BoardVO {
         this.title = title;
     }
 
-    public String getWriter() {
-        return writer;
+    public String getCookingTime() {
+        return cookingTime;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setCookingTime(String cookingTime) {
+        this.cookingTime = cookingTime;
     }
 
-    public String getContent() {
-        return content;
+    public String getCookingTools() {
+        return cookingTools;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setCookingTools(String cookingTools) {
+        this.cookingTools = cookingTools;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(String recipe) {
+        this.recipe = recipe;
     }
 
     public Date getRegdate() {
@@ -53,19 +78,11 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
-    public int getCnt() {
-        return cnt;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
-
-    private String category;
-    private String title;
-    private String writer;
-    private String content;
-    private Date regdate;
-    private int cnt;
-
 }

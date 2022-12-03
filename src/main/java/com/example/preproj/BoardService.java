@@ -1,4 +1,4 @@
-package com.example.preproj.board;
+package com.example.preproj;
 
 import java.util.List;
 
