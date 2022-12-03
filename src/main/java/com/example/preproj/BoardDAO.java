@@ -12,6 +12,8 @@ import java.util.List;
 
 @Repository
 public class BoardDAO {
+
+    @Autowired
     private JdbcTemplate template;
 
     public void setTemplate(JdbcTemplate template) {

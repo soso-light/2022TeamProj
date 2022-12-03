@@ -12,7 +12,7 @@
     <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver">
         </property>
-        <property name="url" value="jdbc:mysql://walab.handog.edu/p3_21900745"></property>
+        <property name="url" value="jdbc:mysql://walab.handong.edu:3306/p3_21900745"></property>
         <property name="username" value="p3_21900745">
         </property>
         <property name="password" value="ooquoDi3Pi">

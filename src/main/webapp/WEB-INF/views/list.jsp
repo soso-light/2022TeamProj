@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: soundligt
-  Date: 2022-12-03
-  Time: 오후 5:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
     <title>Title</title>
@@ -18,8 +13,8 @@
         <th>Writer</th>
         <th>Title</th>
         <th>Cooking time</th>
-        <th>likes</th>
         <th>Regdate</th>
+        <th>likes</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -31,12 +26,19 @@
             <td>${u.cookingTime}</td>
             <td>${u.regdate}</td>
             <td>${u.likes}</td>
-            <td><a href="editform/${u.seq}">Edit</a></td>
+            <td><a href="/board/editform/${u.seq}">Edit</a></td>
             <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
 
-<br/><a href="add">Add new post</a>
+<br/><a href="/board/add">Add new post</a>
+
+<script>
+    function delete_ok(id){
+        var a = confirm("정말로 삭제하시겠습니까?");
+        if(a) location.href='/board/deleteok/'+ id;
+    }
+</script>
 </body>
 </html>

@@ -24,7 +24,7 @@ public class BoardController {
         return "addpostform";
     }
 
-    @RequestMapping(value = "/addok", method = RequestMethod.GET)
+    @RequestMapping(value = "/addok", method = RequestMethod.POST)
     public String addPostOK(BoardVO vo){
         if(boardService.insertBoard(vo)==0){
             System.out.println("데이터 추가 실패");
@@ -41,7 +41,7 @@ public class BoardController {
         return "editform";
     }
 
-    @RequestMapping(value = "/editok", method = RequestMethod.GET)
+    @RequestMapping(value = "/editok", method = RequestMethod.POST)
     public String editPostOK(BoardVO vo){
         if(boardService.updateBoard(vo)==0){
             System.out.println("데이터 추가 실패");
