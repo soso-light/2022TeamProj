@@ -22,7 +22,7 @@
     <tr><td>Ingredients:</td><td><form:textarea cols="50" rows="5" path="ingredients"></form:textarea></td></tr>
     <tr><td>Recipe:</td><td><form:textarea cols="50" rows="5" path="recipe"></form:textarea></td></tr>
     <tr><td>Likes:</td><td><form:input type="text" path="likes"/></td></tr>
-    <tr><td align="right"><button type="button" onclick="location.href='list'">목록</button> </td><td><input type="submit"/></td></tr>
+    <tr><td align="right"><button type="button" onclick="location.href='../list'">목록</button> </td><td><input type="submit"/></td></tr>
   </table>
 </form:form>
 
