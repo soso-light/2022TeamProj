@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+    <insert id="insertBoard">
+        insert into RECIPE_DATA (userid, title, cookingTime, cookingTools, ingredients, recipe, likes)
+        values (#{userid} , #{title} , #{cookingTime} , #{cookingTools}, #{ingredients}, #{recipe}, #{likes})
+    </insert>
+    <update id="updateBoard">
+        update RECIPE_DATA
+        set userid=#{userid}, title=#{title}, cookingTime=#{cookingTime}, cookingTools=#{cookingTools}, ingredients=#{ingredients}, recipe=#{recipe}, likes=#{likes}
+        where seq=#{seq}</update>
+    <delete id="deleteBoard">
+        delete from RECIPE_DATA where seq=#{seq}
+    </delete>
+    <select id="getBoard" resultType="board">
+        select * from RECIPE_DATA where seq=#{seq}
+    </select>
+    <select id="getBoardList" resultType="board">
+        select * from RECIPE_DATA order by seq desc
+    </select>
+</mapper>

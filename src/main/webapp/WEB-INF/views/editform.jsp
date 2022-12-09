@@ -15,7 +15,7 @@
 <form:form modelAttribute="u" action="../editok" method="POST">
   <form:hidden path="seq"/>
   <table id="edit">
-    <tr><td>Title:</td><td><form:input path="title"/></td></tr>
+    <tr><td>Title:</td><td><form:input type="text" path="title"/></td></tr>
     <tr><td>Userid:</td><td><form:input type="text" path="userid"/></td></tr>
     <tr><td>Cooking Time:</td><td><form:input type="text" path="cookingTime"/></td></tr>
     <tr><td>Cooking Tools:</td><td><form:textarea cols="50" rows="5" path="cookingTools"></form:textarea></td></tr>

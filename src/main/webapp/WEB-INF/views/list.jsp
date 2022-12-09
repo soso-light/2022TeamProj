@@ -26,18 +26,18 @@
             <td>${u.cookingTime}</td>
             <td>${u.regdate}</td>
             <td>${u.likes}</td>
-            <td><a href="/board/editform/${u.seq}">Edit</a></td>
+            <td><a href="editform/${u.seq}">Edit</a></td>
             <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
 
-<br/><a href="/board/add">Add new post</a>
+<br/><a href="add">Add new post</a>
 
 <script>
     function delete_ok(id){
         var a = confirm("정말로 삭제하시겠습니까?");
-        if(a) location.href='/board/deleteok/'+ id;
+        if(a) location.href='deleteok/'+ id;
     }
 </script>
 </body>

@@ -5,7 +5,7 @@
     <title>add</title>
 </head>
 <body>
-<h2>Hello World!</h2>
-<a href="/board/list">바로가기</a>
+<h2>Welcome!</h2>
+<a href="login/login">바로가기</a>
 </body>
 </html>
