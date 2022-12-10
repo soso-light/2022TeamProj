@@ -33,10 +33,15 @@ public class LoginController {
             returnURL = "redirect:/board/list";
         } else {
             System.out.println("로그인 실패");
-            returnURL = "redirect:/login/login";
+            returnURL = "alert";
         }
 
         return returnURL;
+    }
+
+    @RequestMapping(value = "/alert")
+    public String alert(HttpSession session) {
+        return "redirect:/login/login";
     }
 
     @RequestMapping(value = "/logout")
