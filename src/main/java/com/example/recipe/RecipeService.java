@@ -1,11 +1,13 @@
 package com.example.recipe;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public interface RecipeService {
-    public int insertBoard(RecipeVO vo);
-    public int deleteBoard(int seq);
-    public int updateBoard(RecipeVO vo);
-    public RecipeVO getBoard(int seq);
-    public List<RecipeVO> getBoardList();
+    public int insertRecipe(RecipeVO vo);
+    public int deleteRecipe(int seq);
+    public int updateRecipe(RecipeVO vo);
+    public RecipeVO getRecipe(int seq);
+    public List<RecipeVO> getRecipeList();
 }
