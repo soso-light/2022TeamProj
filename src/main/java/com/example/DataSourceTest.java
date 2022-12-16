@@ -1,4 +1,4 @@
-package com.example.preproj;
+package com.example;
 
 
 import org.springframework.context.ApplicationContext;

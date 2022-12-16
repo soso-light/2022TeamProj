@@ -1,4 +1,4 @@
-package com.example.preproj.member;
+package com.example.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -3,36 +3,61 @@
 
 <html>
 <head>
-    <title>Title</title>
-</head>
-<body>
-<h1>레시피</h1>
-<table id="list" width="90%">
-    <tr>
-        <th>num</th>
-        <th>Writer</th>
-        <th>Title</th>
-        <th>Cooking time</th>
-        <th>Regdate</th>
-        <th>likes</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    <c:forEach items="${list}" var="u">
-        <tr>
-            <td>${u.seq}</td>
-            <td>${u.userid}</td>
-            <td>${u.title}</td>
-            <td>${u.cookingTime}</td>
-            <td>${u.regdate}</td>
-            <td>${u.likes}</td>
-            <td><a href="editform/${u.seq}">Edit</a></td>
-            <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
-        </tr>
-    </c:forEach>
-</table>
+    <title>List</title>
+    <link href="../css/my.css" rel="stylesheet">
 
-<br/><a href="add">Add new post</a>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/offcanvas-navbar/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="theme-color" content="#712cf9">
+    <link href="https://getbootstrap.com/docs/5.2/examples/offcanvas-navbar/offcanvas.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FlowRecipe</a>
+    </div>
+</nav>
+<main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <h1 class="h4 mb-0 text-white lh-1">Recipe List</h1>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <div class="table-responsive">
+            <table id="list" width="90%" class="table table-striped table-sm">
+                <tr>
+                    <th scope="col">num</th>
+                    <th scope="col">Writer</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Cooking time</th>
+                    <th scope="col">Regdate</th>
+                    <th scope="col">level</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                <c:forEach items="${list}" var="u">
+                    <tr>
+                        <td>${u.seq}</td>
+                        <td>${u.userid}</td>
+                        <td>${u.title}</td>
+                        <td>${u.cookingTime}</td>
+                        <td>${u.regdate}</td>
+                        <td>${u.level}</td>
+                        <td><a class="btn text-white bg-purple" href="editform/${u.seq}">Edit</a></td>
+                        <td><a class="btn text-white bg-purple" href="javascript:delete_ok('${u.seq}')">Delete</a></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <small class="d-block text-end mt-3">
+            <a class="btn text-white bg-purple" href="add" role="button">Add</a>
+        </small>
+
+    </div>
+</main>
 
 <script>
     function delete_ok(id){

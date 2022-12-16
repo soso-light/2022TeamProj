@@ -1,4 +1,4 @@
-package com.example.preproj.member;
+package com.example.user;
 
 public class UserVO {
     private String userid;

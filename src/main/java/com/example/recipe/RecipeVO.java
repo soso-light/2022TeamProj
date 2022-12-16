@@ -1,8 +1,8 @@
-package com.example.preproj.board;
+package com.example.recipe;
 
 import java.util.Date;
 
-public class BoardVO {
+public class RecipeVO {
     private int seq;
     private String userid;
     private String title;
@@ -11,7 +11,7 @@ public class BoardVO {
     private String ingredients;
     private String recipe;
     private Date regdate;
-    private int likes;
+    private int level;
 
 
     public int getSeq() {
@@ -78,11 +78,11 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
-    public int getLikes() {
-        return likes;
+    public int getLevel() {
+        return level;
     }
 
-    public void setLikes(int likes) {
-        this.likes = likes;
+    public void setLevel(int level) {
+        this.level = level;
     }
 }
